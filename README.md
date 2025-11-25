@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Mental Health Support System for College Students
 
 A comprehensive digital psychological intervention system designed specifically for college students, providing AI-guided support, confidential counseling booking, educational resources, peer support, and mental health assessments.
@@ -333,3 +334,7 @@ This system is designed for educational institutions and can be:
 **Note**: This is a prototype system designed for demonstration purposes. For production use, additional security measures, backend integration, and professional review would be necessary.
 
 **Disclaimer**: This system is not a replacement for professional mental health care. Users experiencing mental health crises should contact emergency services or qualified mental health professionals immediately.
+=======
+# Mental-Health-Awareness
+Built a responsive and interactive web platform to promote mental health awareness and encourage self-care practices.
+>>>>>>> 3e3421ae7c523fc4491f18176e09c0a6df708026
