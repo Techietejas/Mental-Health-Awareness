@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Support System - College Students</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-heart"></i>
+                <span>MentalHealth Support</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#chat" class="nav-link">AI Support</a></li>
+                <li><a href="#booking" class="nav-link">Book Session</a></li>
+                <li><a href="#resources" class="nav-link">Resources</a></li>
+                <li><a href="#community" class="nav-link">Community</a></li>
+                <li><a href="#screening" class="nav-link">Self-Assessment</a></li>
+                <li><a href="#admin" class="nav-link admin-only">Admin</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Your Mental Health Matters</h1>
+                    <p>A safe, confidential, and supportive space for college students to access mental health resources and support.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="showSection('chat')">
+                            <i class="fas fa-robot"></i> Get AI Support
+                        </button>
+                        <button class="btn btn-secondary" onclick="showSection('screening')">
+                            <i class="fas fa-clipboard-check"></i> Self Assessment
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="floating-cards">
+                        <div class="card floating-card-1">
+                            <i class="fas fa-comments"></i>
+                            <span>24/7 AI Support</span>
+                        </div>
+                        <div class="card floating-card-2">
+                            <i class="fas fa-user-md"></i>
+                            <span>Professional Help</span>
+                        </div>
+                        <div class="card floating-card-3">
+                            <i class="fas fa-users"></i>
+                            <span>Peer Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="stats-section">
+                <div class="container">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h3>5000+</h3>
+                            <p>Students Helped</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-clock"></i>
+                            <h3>24/7</h3>
+                            <p>Available Support</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>100%</h3>
+                            <p>Confidential</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-language"></i>
+                            <h3>5+</h3>
+                            <p>Languages</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Chat Section -->
+        <section id="chat" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>AI Mental Health Assistant</h2>
+                    <p>Get immediate support and guidance from our AI assistant. All conversations are confidential.</p>
+                </div>
+                <div class="chat-container">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="message bot-message">
+                            <div class="message-avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="message-content">
+                                <p>Hello! I'm here to help you with your mental health concerns. How are you feeling today? You can talk to me about anything - stress, anxiety, depression, or just need someone to listen.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-input-container">
+                        <input type="text" id="chatInput" placeholder="Type your message here..." maxlength="500">
+                        <button id="sendButton" class="send-btn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <section id="booking" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Book a Counselling Session</h2>
+                    <p>Schedule a confidential appointment with our professional counsellors or mental health helpline.</p>
+                </div>
+                <div class="booking-container">
+                    <div class="booking-form">
+                        <form id="bookingForm">
+                            <div class="form-group">
+                                <label for="studentName">Full Name</label>
+                                <input type="text" id="studentName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="studentId">Student ID</label>
+                                <input type="text" id="studentId" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="counsellorType">Type of Support</label>
+                                <select id="counsellorType" required>
+                                    <option value="">Select support type</option>
+                                    <option value="counsellor">On-campus Counsellor</option>
+                                    <option value="helpline">Mental Health Helpline</option>
+                                    <option value="emergency">Emergency Support</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="preferredDate">Preferred Date</label>
+                                <input type="date" id="preferredDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="preferredTime">Preferred Time</label>
+                                <select id="preferredTime" required>
+                                    <option value="">Select time</option>
+                                    <option value="09:00">9:00 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="14:00">2:00 PM</option>
+                                    <option value="15:00">3:00 PM</option>
+                                    <option value="16:00">4:00 PM</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="concern">Brief Description of Concern</label>
+                                <textarea id="concern" rows="4" placeholder="Please describe what you'd like to discuss (optional)"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="confidentiality" required>
+                                    <span class="checkmark"></span>
+                                    I understand that this session is confidential and my information will be protected.
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Book Session</button>
+                        </form>
+                    </div>
+                    <div class="booking-info">
+                        <h3>Available Counsellors</h3>
+                        <div class="counsellor-list">
+                            <div class="counsellor-card">
+                                <div class="counsellor-avatar">
+                                    <i class="fas fa-user-md"></i>
+                                </div>
+                                <div class="counsellor-info">
+                                    <h4>Dr. Sarah Johnson</h4>
+                                    <p>Licensed Clinical Psychologist</p>
+                                    <span class="availability available">Available</span>
+                                </div>
+                            </div>
+                            <div class="counsellor-card">
+                                <div class="counsellor-avatar">
+                                    <i class="fas fa-user-md"></i>
+                                </div>
+                                <div class="counsellor-info">
+                                    <h4>Dr. Michael Chen</h4>
+                                    <p>Mental Health Counselor</p>
+                                    <span class="availability available">Available</span>
+                                </div>
+                            </div>
+                            <div class="counsellor-card">
+                                <div class="counsellor-avatar">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="counsellor-info">
+                                    <h4>24/7 Helpline</h4>
+                                    <p>Emergency Mental Health Support</p>
+                                    <span class="availability emergency">24/7 Available</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Mental Health Resources</h2>
+                    <p>Access educational content, relaxation tools, and wellness guides in multiple languages.</p>
+                </div>
+                <div class="resources-container">
+                    <div class="resource-categories">
+                        <button class="category-btn active" data-category="all">All Resources</button>
+                        <button class="category-btn" data-category="videos">Videos</button>
+                        <button class="category-btn" data-category="audio">Relaxation Audio</button>
+                        <button class="category-btn" data-category="guides">Wellness Guides</button>
+                        <button class="category-btn" data-category="regional">Regional Content</button>
+                    </div>
+                    <div class="resources-grid" id="resourcesGrid">
+                        <!-- Resources will be dynamically loaded -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Section -->
+        <section id="community" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Peer Support Community</h2>
+                    <p>Connect with fellow students in a safe, moderated environment. Share experiences and support each other.</p>
+                </div>
+                <div class="community-container">
+                    <div class="forum-container">
+                        <div class="forum-header">
+                            <h3>Discussion Forums</h3>
+                            <button class="btn btn-primary" onclick="showNewPostModal()">
+                                <i class="fas fa-plus"></i> New Post
+                            </button>
+                        </div>
+                        <div class="forum-categories">
+                            <div class="forum-category">
+                                <h4>General Support</h4>
+                                <p>Share general experiences and get support</p>
+                                <span class="post-count">24 posts</span>
+                            </div>
+                            <div class="forum-category">
+                                <h4>Academic Stress</h4>
+                                <p>Discuss academic pressures and coping strategies</p>
+                                <span class="post-count">18 posts</span>
+                            </div>
+                            <div class="forum-category">
+                                <h4>Social Anxiety</h4>
+                                <p>Support for social anxiety and isolation</p>
+                                <span class="post-count">12 posts</span>
+                            </div>
+                            <div class="forum-category">
+                                <h4>Success Stories</h4>
+                                <p>Share your journey and inspire others</p>
+                                <span class="post-count">8 posts</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Screening Section -->
+        <section id="screening" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Mental Health Self-Assessment</h2>
+                    <p>Take a confidential self-assessment to better understand your mental health status. Results are private and for your reference only.</p>
+                </div>
+                <div class="screening-container">
+                    <div class="screening-tabs">
+                        <button class="tab-btn active" data-test="phq9">PHQ-9 (Depression)</button>
+                        <button class="tab-btn" data-test="gad7">GAD-7 (Anxiety)</button>
+                        <button class="tab-btn" data-test="ghq">GHQ-12 (General Health)</button>
+                    </div>
+                    <div class="screening-content">
+                        <div id="phq9-test" class="test-container active">
+                            <h3>Patient Health Questionnaire (PHQ-9)</h3>
+                            <p>Over the last 2 weeks, how often have you been bothered by any of the following problems?</p>
+                            <form id="phq9Form">
+                                <!-- PHQ-9 questions will be loaded dynamically -->
+                            </form>
+                        </div>
+                        <div id="gad7-test" class="test-container">
+                            <h3>Generalized Anxiety Disorder (GAD-7)</h3>
+                            <p>Over the last 2 weeks, how often have you been bothered by the following problems?</p>
+                            <form id="gad7Form">
+                                <!-- GAD-7 questions will be loaded dynamically -->
+                            </form>
+                        </div>
+                        <div id="ghq-test" class="test-container">
+                            <h3>General Health Questionnaire (GHQ-12)</h3>
+                            <p>Please answer the following questions about your general health:</p>
+                            <form id="ghqForm">
+                                <!-- GHQ-12 questions will be loaded dynamically -->
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admin Section -->
+        <section id="admin" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Admin Dashboard</h2>
+                    <p>Monitor mental health trends and system usage (Admin access required)</p>
+                </div>
+                <div class="admin-container">
+                    <div class="admin-stats">
+                        <div class="stat-card">
+                            <h3>Total Users</h3>
+                            <span class="stat-number">1,247</span>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Active Sessions</h3>
+                            <span class="stat-number">23</span>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Bookings This Week</h3>
+                            <span class="stat-number">45</span>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Community Posts</h3>
+                            <span class="stat-number">156</span>
+                        </div>
+                    </div>
+                    <div class="admin-charts">
+                        <div class="chart-container">
+                            <h3>Mental Health Trends</h3>
+                            <canvas id="trendsChart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <h3>Resource Usage</h3>
+                            <canvas id="usageChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modals -->
+    <div id="newPostModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Create New Post</h3>
+                <span class="close" onclick="closeModal('newPostModal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="newPostForm">
+                    <div class="form-group">
+                        <label for="postTitle">Title</label>
+                        <input type="text" id="postTitle" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="postCategory">Category</label>
+                        <select id="postCategory" required>
+                            <option value="general">General Support</option>
+                            <option value="academic">Academic Stress</option>
+                            <option value="social">Social Anxiety</option>
+                            <option value="success">Success Stories</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="postContent">Content</label>
+                        <textarea id="postContent" rows="6" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="anonymousPost">
+                            <span class="checkmark"></span>
+                            Post anonymously
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Create Post</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="js/booking.js"></script>
+    <script src="js/resources.js"></script>
+    <script src="js/community.js"></script>
+    <script src="js/screening.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
